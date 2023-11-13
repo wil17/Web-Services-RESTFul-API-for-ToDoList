@@ -1,1 +1,10 @@
 node_modules/
+config/config.json
+models/
+controllers/
+migrations/
+middleware/
+seeders/
+app.js
+package-lock.json
+package.json
