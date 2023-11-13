@@ -3,7 +3,7 @@ const { Todo } = require('../models');
 const createTodo = async (req, res) => {
   try {
     const { title, description } = req.body;
-    const userId = req.user.id; // Use req.user.id
+    const userId = req.user.id;
     const todo = await Todo.create({ title, description, userId });
     res.status(201).json(todo);
   } catch (error) {
@@ -15,7 +15,7 @@ const createTodo = async (req, res) => {
 const getAllTodos = async (req, res) => {
   try {
     const userId = req.user.id;
-    const todos = await Todo.findAll({ where: { userId } }); // Jangan menyertakan where untuk mendapatkan semua todos
+    const todos = await Todo.findAll({ where: { userId } }); 
     res.status(200).json(todos);
   } catch (error) {
     console.error(error);

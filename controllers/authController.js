@@ -4,7 +4,6 @@ const jwt = require('jsonwebtoken');
 const register = async (req, res) => {
   try {
     const { username, password } = req.body;
-    // Implementasi logika registrasi disini
     await User.create({ username, password });
     res.status(201).json({ message: 'Register user berhasil.' });
   } catch (error) {
@@ -16,7 +15,6 @@ const register = async (req, res) => {
 const login = async (req, res) => {
   try {
     const { username, password } = req.body;
-    // Implementasi logika login disini
     const user = await User.findOne({ where: { username } });
 
     if (!user || user.password !== password) {
